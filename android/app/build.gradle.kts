@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
@@ -23,6 +25,17 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // Load Mapbox token from local.properties
+        val localProperties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.inputStream().use { 
+                localProperties.load(it) 
+            }
+        }
+        val mapboxToken = localProperties.getProperty("MAPBOX_PUBLIC_TOKEN") ?: "MAPBOX_PUBLIC_TOKEN"
+        manifestPlaceholders["mapboxAccessToken"] = mapboxToken
     }
 
     buildTypes {

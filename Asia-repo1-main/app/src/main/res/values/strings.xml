@@ -104,5 +104,5 @@
     <string name="search_drivers">Search drivers&#8230;</string>
     <string name="search_requests">Search requests&#8230;</string>
     <string name="search">Search&#8230;</string>
-    <string name="mapbox_access_token">pk.eyJ1IjoicHJpbmNlNjcwMyIsImEiOiJjbW9zeHB2ODIwNDFnMnRwdWxsam9sYWJmIn0.8DQhyf9Z9-yP8lCuP2WS3g</string>
+    <string name="mapbox_access_token">MAPBOX_PUBLIC_TOKEN</string>
 </resources>

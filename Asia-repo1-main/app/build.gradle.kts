@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     // Idinagdag ang Google Services Plugin para gumana ang Firebase
@@ -24,6 +26,17 @@ android {
 
         // Siguraduhin na ang NDK 27 ay naka-install sa iyong SDK Manager
         ndkVersion = "27.0.12077973"
+
+        // Load Mapbox token from local.properties
+        val localProperties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.inputStream().use { 
+                localProperties.load(it) 
+            }
+        }
+        val mapboxToken = localProperties.getProperty("MAPBOX_PUBLIC_TOKEN") ?: "MAPBOX_PUBLIC_TOKEN"
+        manifestPlaceholders["mapboxAccessToken"] = mapboxToken
     }
 
     buildTypes {

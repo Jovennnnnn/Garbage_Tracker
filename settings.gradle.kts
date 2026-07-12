@@ -26,7 +26,13 @@ dependencyResolutionManagement {
             }
             credentials {
                 username = "mapbox"
-                password = providers.gradleProperty("MAPBOX_DOWNLOADS_TOKEN").getOrElse("")
+                val localProperties = java.util.Properties()
+                val localPropertiesFile = File(rootDir, "local.properties")
+                if (localPropertiesFile.exists()) {
+                    localPropertiesFile.inputStream().use { localProperties.load(it) }
+                }
+                password = localProperties.getProperty("MAPBOX_DOWNLOADS_TOKEN")
+                    ?: providers.gradleProperty("MAPBOX_DOWNLOADS_TOKEN").getOrElse("")
             }
         }
         maven { url = uri("https://jitpack.io") }

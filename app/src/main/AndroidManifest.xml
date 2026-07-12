@@ -27,7 +27,7 @@
         <!-- Ito ang tamang setup para sa Mapbox Token -->
         <meta-data
             android:name="com.mapbox.AccessToken"
-            android:value="pk.eyJ1IjoicHJpbmNlNjcwMyIsImEiOiJjbW9zeHB2ODIwNDFnMnRwdWxsam9sYWJmIn0.8DQhyf9Z9-yP8lCuP2WS3g" />
+            android:value="${mapboxAccessToken}" />
 
         <activity
             android:name=".SplashActivity"

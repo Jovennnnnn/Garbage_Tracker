@@ -19,7 +19,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   // Set Mapbox Access Token
-  MapboxOptions.setAccessToken("pk.eyJ1IjoicHJpbmNlNjcwMyIsImEiOiJjbW9zeHB2ODIwNDFnMnRwdWxsam9sYWJmIn0.8DQhyf9Z9-yP8lCuP2WS3g");
+  MapboxOptions.setAccessToken(const String.fromEnvironment('MAPBOX_PUBLIC_TOKEN', defaultValue: 'MAPBOX_PUBLIC_TOKEN'));
 
   // Initialize Firebase with the config from google-services.json
   await Firebase.initializeApp(
