@@ -15,7 +15,8 @@ dependencies:
   fl_chart: ^0.68.0
   dio: ^5.4.3+1
   shared_preferences: ^2.2.3
-  mapbox_maps_flutter: ^3.0.0-alpha.1
+  # Use stable version compatible with Dart 3.0+
+  mapbox_maps_flutter: ^2.12.0
 
 dev_dependencies:
   flutter_test:
