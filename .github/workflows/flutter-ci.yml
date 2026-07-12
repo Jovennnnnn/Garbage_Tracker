@@ -17,15 +17,13 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.9'
           channel: 'stable'
-          cache: true
 
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Static Code Analysis
-        run: flutter analyze --no-fatal-warnings
+      - name: Static Analysis
+        run: flutter analyze
 
       - name: Run Unit Tests
-        run: flutter test --no-sound-null-safety || echo "No unit tests implemented at this stage"
+        run: flutter test
