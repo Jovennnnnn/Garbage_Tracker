@@ -15,7 +15,7 @@ dependencies:
   fl_chart: ^0.68.0
   dio: ^5.4.3+1
   shared_preferences: ^2.2.3
-  mapbox_maps_flutter: ^2.3.0  # ✅ Stable version, exactly matches SDK >=3.0.0
+  mapbox_maps_flutter: ^2.3.0   # ✅ Stable version, matches your SDK
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +24,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/
